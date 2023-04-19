@@ -29,7 +29,7 @@ class LoginController extends GetxController {
 
   void onSubmit() async {
     if (formKey.currentState!.validate()) {
-      loading.show(message: "Please wait ..");
+      loading.show(message: "Logging In");
       await LoginRepo.login(
         email: emailController.text,
         password: passwordController.text,
@@ -41,11 +41,12 @@ class LoginController extends GetxController {
           Get.find<CoreController>().loadCurrentUser();
           bearerToken.value = token.toString();
           Get.offAllNamed(DashScreen.routeName);
-          CustomSnackBar.success(title: "Login", message: "Login Successfull");
+          CustomSnackBar.success(
+              title: "Login", message: "Congrats. Login Successfull");
         },
         onError: (message) {
           loading.hide();
-          CustomSnackBar.error(title: "Login", message: message);
+          CustomSnackBar.error(title: "Failed", message: message);
         },
       );
     }

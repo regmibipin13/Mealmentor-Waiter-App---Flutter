@@ -41,7 +41,7 @@ class RunningOrder extends StatelessWidget {
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 16)),
-                              trailing: Text('Rs. ${activeOrder.grandTotal}',
+                              trailing: Text('Rs.${activeOrder.grandTotal}',
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15,
